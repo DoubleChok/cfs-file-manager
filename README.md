@@ -1,8 +1,8 @@
-#CFS File Manager#
+# CFS File Manager #
 
 File Manager GUI to accompany cfs suite of meteor packages. Allows users to organize files into a hierarchy, select existing files or upload new ones.
 
-##Installation##
+## Installation ##
 `meteor add dbernhard:cfs-file-manager`
 
 ##Use##

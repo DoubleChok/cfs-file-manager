@@ -18,7 +18,7 @@ Package.onUse(function(api) {
     'underscore',
     'mongo',
     'check',
-    'cfs:standard-packages',
+    'cfs:standard-packages@0.0.30',
     'random',
     'less'
   ]);
@@ -28,7 +28,7 @@ Package.onUse(function(api) {
     'templating',
     'livedata',
     'reactive-var',
-    'matb33:bootstrap-grid'
+    'matb33:bootstrap-grid@10.0.0'
   ], 'client');
 
   api.addFiles('cfs-file-manager.js');
