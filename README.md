@@ -5,9 +5,7 @@ File Manager GUI to accompany cfs suite of meteor packages. Allows users to orga
 ## Installation ##
 `meteor add dbernhard:cfs-file-manager`
 
-##Use##
-
-###Setup###
+### Setup ###
 This package creates a new collection called `FileManagerGroups`, and it also needs to know which collections to get files from. To initialize, create a file in your common code that does three things:
 
 First, it needs to tell the package which collections to get files from. Pass an array of Mongo collection instances.
@@ -36,7 +34,9 @@ Finally, we need to declare allow/deny rules that control who can update the `Fi
 
 You can add deny rules too, if you like. Obviously, the allow/deny rules should match your use case.
 
-###View###
+Also, if you insert a file with this package, it will add a  `fileGroupId` prop to the file. **Make sure you publish this property and that you allow / deny rules allow it to be set!**
+
+### Use ###
 Launch the file manager as follows:
 
 `FileManager.launch(collection, opts, doneCallBack);`
@@ -59,6 +59,6 @@ All together then, we have something like this:
 
 **NB** The file manager will render in the elem you defined above (`FileManager.wrapperElem`). **It's up to you to ensure that this elem exists and that it is visible.**
 
-##To Do##
+## To Do ##
 - Tests
 - Improve UX (eg, drag and drop moves, etc)
