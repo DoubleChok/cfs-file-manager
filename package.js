@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dbernhard:cfs-file-manager',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
   summary: 'Graphic file manager for meteor collectionFS package',
   // URL to the Git repository containing the source code for this package.
