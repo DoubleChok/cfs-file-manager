@@ -1,0 +1,65 @@
+<template name='cfsFileManager'>
+  <div id='file-manager-container'>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12" style='margin-bottom: 25px;'>
+          <ul id='mode-toggler' class="nav nav-pills pull-right">
+            <li role="presentation" class="{{#if is mode 'find'}}active{{/if}}"><a href="#" class='toggle-mode' data-mode='find'>Select existing</a></li>
+            <li role="presentation" class="{{#if is mode 'insert'}}active{{/if}}"><a href="#" class='toggle-mode' data-mode='insert'>Upload new</a></li>
+          </ul>
+        </div>
+      </div>
+      {{#if is mode 'insert'}}
+      <div class="row">
+        <div class="col-xs-12">
+          <input type="text" class='form-control save-file-name show-select-file' value="{{#if fileObj}}{{fileObj.name}}{{else}}Click to select file{{/if}}">
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <ol style='list-style:none' id='cfsFileManager'>
+            {{> cfsFileManagerFileGroups}}
+          </ol>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-6">
+          {{#with previewItem}}
+            {{#if isFile}}
+              {{#if isImage}}
+                  <img src="{{imgPreviewUrl}}" alt="" class='cfm-preview-img'>
+                {{else}}
+                  <img src="packages/dbernhard_cfs-file-manager/assets/generic_file_placeholder.png" alt="Document placeholder" class='cfm-preview-img'>
+              {{/if}}
+              {{else}}
+                <img src="packages/dbernhard_cfs-file-manager/assets/generic_folder_placeholder.png" alt="Folder placeholder" class='cfm-preview-img'>
+            {{/if}}
+
+            <span class='center-text'>{{getPath}}</span>
+            <a href='#' class='center-text change-name'>Change Name</a>
+
+            {{#unless isFile}}
+              <a href="#" class='center-text fork-group'> New Child Folder</a>
+            {{/unless}}
+          {{/with}}
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="col-xs-12" style='margin-top: 30px;'>
+          <div class="pull-right">
+            <button class='btn cancel'>Cancel</button>
+            {{#if is mode 'insert'}}
+              <button class='btn save-file-now'>Save</button>
+            {{else}}
+              {{#if fileObj}}
+                <button class='btn select-file'>Select</button>
+              {{/if}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="file" id='cfs-fm-file-input' style='display:none !important'>
+</template>

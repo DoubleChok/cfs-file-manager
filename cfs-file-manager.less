@@ -1,0 +1,156 @@
+//mixins
+.center-text {
+  text-align: center;
+  display: block;
+}
+
+.align-block {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#file-manager-container {
+
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 0.5s; /* Firefox < 16 */
+    -ms-animation: fadein 0.5s; /* Internet Explorer */
+     -o-animation: fadein 0.5s; /* Opera < 12.1 */
+        animation: fadein 0.5s;
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  padding: 40px;
+
+  input {
+    cursor: pointer !important;
+  }
+
+  .row {
+    width: 100%;
+    padding: 5px;
+    .align-block;
+    margin-bottom: 20px;
+
+    .full-width {
+      width: 100%;
+    }
+
+    .two-thirds {
+      display: inline-block;
+      width: 66.66666666%
+    }
+    .one-third {
+      display: inline-block;
+      width: 33.33333333%
+    }
+  }
+}
+
+.cfm-preview-img {
+  max-height: 150px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-file,
+.save-file-now {
+  background-color: green;
+  border-radius: 4px;
+  padding: 10px 15px;
+  color: white;
+}
+
+.cancel {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+/*copy some bootstrap boilerplate so this works with no dependencies*/
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+ul {
+  margin-top: 0;
+}
+
+.nav-pills > li {
+  float: left;
+}
+
+.nav-pills > li > a {
+  border-radius: 4px;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}

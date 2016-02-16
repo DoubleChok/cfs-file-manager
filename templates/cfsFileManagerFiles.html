@@ -1,0 +1,11 @@
+<template name='cfsFileManagerFiles'>
+  {{#each files}}
+    <li>
+      {{#if is mode 'insert'}}
+        <span><em>{{name}}</em></span>
+      {{else}}
+        <a class="file-handle" href="#">{{name}}</a>
+      {{/if}}
+    </li>
+  {{/each}}
+</template>

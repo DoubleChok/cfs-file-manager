@@ -1,0 +1,20 @@
+<template name='cfsFileManagerFileGroups'>
+  {{#each fileGroups}}
+  <li>
+    <span class="catOpen">
+      [<b>{{#if isOpen}}-{{else}}+{{/if}}</b>]
+    </span>
+      <a class="file-group-handle" href="#">{{name}}</a>
+      {{#if isOpen}}
+        {{#if hasChildren}}
+            <ol style='list-style: none'>
+              {{> cfsFileManagerFileGroups}}
+              {{> cfsFileManagerFiles}}
+            </ol>
+        {{else}}
+            <br /><em>Nothing here</em>
+        {{/if}}
+      {{/if}}
+  </li>
+  {{/each}}
+</template>
